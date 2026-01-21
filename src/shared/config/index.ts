@@ -14,7 +14,7 @@ const envSchema = z.object({
   POSTGRES_PORT: z.string().transform(Number).pipe(z.number().int().positive()),
   POSTGRES_DB: z.string().min(1),
   POSTGRES_USER: z.string().min(1),
-  POSTGRES_PASSWORD: z.string().min(1),
+  POSTGRES_PASSWORD: z.string().default(''), // Empty for local peer auth
   
   // JWT
   JWT_SECRET: z.string().min(32, 'JWT_SECRET must be at least 32 characters'),
