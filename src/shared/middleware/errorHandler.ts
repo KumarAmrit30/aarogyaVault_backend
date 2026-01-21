@@ -10,12 +10,13 @@ export interface AppError extends Error {
 
 /**
  * Global error handling middleware
+ * Note: next parameter is required for Express to recognize this as an error handler
  */
 export function errorHandler(
   err: AppError,
-  req: Request,
+  _req: Request,
   res: Response,
-  next: NextFunction
+  _next: NextFunction
 ): void {
   const statusCode = err.statusCode || 500;
   const message = err.message || 'Internal Server Error';
@@ -40,7 +41,7 @@ export function errorHandler(
 export function notFoundHandler(
   req: Request,
   res: Response,
-  next: NextFunction
+  _next: NextFunction
 ): void {
   res.status(404).json({
     success: false,

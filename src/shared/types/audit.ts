@@ -11,6 +11,8 @@ export type AuditActionType =
   | 'record_verified'
   | 'consent_created'
   | 'consent_accessed'
+  | 'consent_access_failed'
+  | 'consent_revoked'
   | 'consent_expired'
   | 'external_access';
 
