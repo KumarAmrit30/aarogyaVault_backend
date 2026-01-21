@@ -1,0 +1,44 @@
+{
+  "name": "aarogyavault-backend",
+  "version": "1.0.0",
+  "description": "AarogyaVault - Privacy-first Personal Health Records backend",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "ts-node src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "migrate": "node-pg-migrate -j ts -m migrations",
+    "migrate:up": "node-pg-migrate up -j ts -m migrations",
+    "migrate:down": "node-pg-migrate down -j ts -m migrations",
+    "migrate:create": "node-pg-migrate create -j ts -m migrations",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "healthcare",
+    "phr",
+    "abha",
+    "medical-records"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "jsonwebtoken": "^9.0.2",
+    "dotenv": "^16.3.1",
+    "node-pg-migrate": "^6.2.2",
+    "zod": "^3.22.4",
+    "multer": "^1.4.5-lts.1",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.5",
+    "@types/pg": "^8.10.9",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/multer": "^1.4.11",
+    "@types/cors": "^2.8.17",
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2"
+  }
+}
